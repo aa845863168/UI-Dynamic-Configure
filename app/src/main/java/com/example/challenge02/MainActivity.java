@@ -103,10 +103,13 @@ public class MainActivity extends AppCompatActivity {
         if (type == REFRESH) {
             Img img = new Img();
             int i = 0;
-            for (ParseData.Data info : data){
-                String[] id = new String[]{"1","2","3","4","5"};
+            for (ParseData.Data info : data) {
+                String[] id = new String[]{"1", "2", "3", "4", "5"};
                 img.setCurrentPosition(info.currentPosition);
-                img.setImg(info.img);
+                if (info.img == null)
+                    img.setImg("null");
+                else
+                    img.setImg(info.img);
                 img.updateAll("id = ?", id[i]);
                 i++;
             }

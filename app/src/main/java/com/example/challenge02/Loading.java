@@ -33,7 +33,7 @@ public class Loading extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loading);
         loading = findViewById(R.id.loading);
-        loading.setVisibility(View.VISIBLE);
+        loading.setVisibility(View.VISIBLE);    //加载标志
         sendRequestWithOkHttp(NO_REFRESH);
     }
 

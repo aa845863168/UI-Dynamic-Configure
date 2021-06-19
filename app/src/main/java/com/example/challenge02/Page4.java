@@ -40,7 +40,7 @@ public class Page4 extends Fragment implements View.OnClickListener {
         Button next = view.findViewById(R.id.next_4);
         back.setOnClickListener(this);
         next.setOnClickListener(this);
-        Log.d("Check","Position is Page4");
+        Log.d("Check", "Position is Page4");
         return view;
     }
 
@@ -50,10 +50,11 @@ public class Page4 extends Fragment implements View.OnClickListener {
         List<Img> imgs = DataSupport.findAll(Img.class);
         switch (v.getId()) {
             case R.id.back_4:
-                mainActivity.replaceFragment(new Page3(imgs.get(2).getCurrentPosition(), imgs.get(2).getImg()));
+                    mainActivity.replaceFragment(new Page3(imgs.get(2).getCurrentPosition(), imgs.get(2).getImg()));
                 break;
             case R.id.next_4:
-                mainActivity.replaceFragment(new Page5(imgs.get(4).getCurrentPosition(), imgs.get(4).getImg()));
+                if (!imgs.get(4).getImg().equals("null"))
+                    mainActivity.replaceFragment(new Page5(imgs.get(4).getCurrentPosition(), imgs.get(4).getImg()));
                 break;
             case R.id.button4_1:
                 break;

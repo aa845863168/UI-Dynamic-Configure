@@ -18,7 +18,7 @@ import org.litepal.crud.DataSupport;
 
 import java.util.List;
 
-public class Page5 extends Fragment implements View.OnClickListener{
+public class Page5 extends Fragment implements View.OnClickListener {
 
     public int currentPosition;
     public String img;
@@ -31,16 +31,16 @@ public class Page5 extends Fragment implements View.OnClickListener{
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_page5,container,false);
+        View view = inflater.inflate(R.layout.activity_page5, container, false);
         ImageView imageView = view.findViewById(R.id.bg_img_5);
         String sImage = img;
-        int image = getActivity().getResources().getIdentifier(sImage.substring(0, sImage.length()-4), "drawable", "com.example.challenge02");
+        int image = getActivity().getResources().getIdentifier(sImage.substring(0, sImage.length() - 4), "drawable", "com.example.challenge02");
         imageView.setImageDrawable(getResources().getDrawable(image));
         Button back = view.findViewById(R.id.back_5);
         Button next = view.findViewById(R.id.next_5);
         back.setOnClickListener(this);
         next.setOnClickListener(this);
-        Log.d("Check","Position is Page5");
+        Log.d("Check", "Position is Page5");
         return view;
     }
 
